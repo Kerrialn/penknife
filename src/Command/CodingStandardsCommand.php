@@ -60,7 +60,7 @@ class CodingStandardsCommand extends BaseCommand
 
         // Run composer to install the package
         $process = Process::fromShellCommandline("composer require $composerPackage");
-        $process->run(function ($type, $buffer) use ($io) {
+        $process->run(function ($type, $buffer) use ($io): void {
             $io->write($buffer);
         });
 
